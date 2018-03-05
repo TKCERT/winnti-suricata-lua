@@ -1,0 +1,1 @@
+alert tcp any any -> any any (msg:"winnti handshake";luajit:winnti.lua; dsize:16; stream_size:either,<,17; threshold: type limit, track by_src, seconds 180, count 1; classtype:trojan-activity; sid:1170701; rev:2;)
